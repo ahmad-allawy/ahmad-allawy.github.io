@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@source "./sections";
+@source "./case-studies";
 
 /* In your input.css or <style> tag */
 @keyframes fadeIn {
@@ -86,3 +88,11 @@
 .animate-staggered-7 { animation-delay: 0.7s; }
 .animate-staggered-8 { animation-delay: 0.8s; }
 /* Add more as needed for your elements */
+
+#case-studies .case-study-card:nth-child(n + 4) {
+  display: none;
+}
+
+.case-studies-page .case-studies-view-all {
+  display: none;
+}

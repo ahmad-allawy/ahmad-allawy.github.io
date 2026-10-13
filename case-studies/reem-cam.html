@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="How Reem-Cam streams multiple phone cameras across a local network without cloud services.">
+    <link href="../output.css" rel="stylesheet">
+    <title>Local Multi-Camera Streaming | Ahmed Allawy</title>
+</head>
+
+<body class="min-h-screen bg-gray-950 text-white antialiased">
+    <main class="mx-auto max-w-4xl px-6 py-10 md:py-16">
+        <a href="../index.html#case-studies"
+            class="inline-flex items-center gap-2 text-sm font-medium text-gray-300 transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-400"><span
+                aria-hidden="true">&larr;</span> All case studies</a>
+
+        <header class="mt-12 border-b border-white/10 pb-10 md:mt-16 md:pb-12">
+            <p class="text-sm font-semibold uppercase tracking-[0.16em] text-emerald-400">WebRTC / Local networking</p>
+            <h1 class="mt-4 text-4xl font-extrabold leading-tight md:text-5xl">Running multi-camera streaming on a local
+                network</h1>
+            <p class="mt-5 max-w-3xl text-lg leading-8 text-gray-300">Connect phone cameras to browser dashboards over
+                one Wi-Fi network without relying on cloud services.</p>
+            <div class="mt-6 flex flex-wrap gap-2 text-sm">
+                <span class="rounded-full bg-indigo-500/10 px-3 py-1 text-indigo-300">Node.js</span>
+                <span class="rounded-full bg-indigo-500/10 px-3 py-1 text-indigo-300">React</span>
+                <span class="rounded-full bg-indigo-500/10 px-3 py-1 text-indigo-300">WebRTC</span>
+                <span class="rounded-full bg-indigo-500/10 px-3 py-1 text-indigo-300">mediasoup</span>
+            </div>
+        </header>
+
+        <figure class="mt-8 overflow-hidden rounded-lg border border-white/10 bg-gray-900">
+            <img src="../assets/case-studies/reem-cam.png"
+                alt="Illustrative architecture diagram: three phones send WebRTC camera streams through a mediasoup SFU to a local browser dashboard."
+                class="h-auto w-full" width="1200" height="750">
+            <figcaption class="px-4 py-3 text-sm text-gray-400">Illustrative system diagram based on the project
+                architecture; not a product screenshot.</figcaption>
+        </figure>
+
+        <article class="space-y-12 py-10 md:space-y-14 md:py-12">
+            <section aria-labelledby="problem-title">
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-300">01 / The challenge</p>
+                <h2 id="problem-title" class="mt-3 text-2xl font-bold">Multiple cameras, one local network</h2>
+                <p class="mt-4 leading-8 text-gray-300">The goal was to use phones as live cameras and view their feeds
+                    from a browser on the same Wi-Fi network. The system was designed to work locally, without a cloud
+                    service or database.</p>
+            </section>
+
+            <section aria-labelledby="diagnosis-title">
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-300">02 / The investigation</p>
+                <h2 id="diagnosis-title" class="mt-3 text-2xl font-bold">The network path is part of the camera feature
+                </h2>
+                <p class="mt-4 leading-8 text-gray-300">Mobile browsers require a secure origin for camera access. A
+                    phone reaches the host through its LAN IP rather than localhost, so HTTPS must be available on that
+                    address. Media traffic also depends on firewall rules and advertising the correct network interface.
+                </p>
+            </section>
+
+            <section aria-labelledby="solution-title">
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-300">03 / The implementation</p>
+                <h2 id="solution-title" class="mt-3 text-2xl font-bold">Route streams locally and let viewers choose
+                    quality</h2>
+                <p class="mt-4 leading-8 text-gray-300">A Node.js server hosts the client over HTTPS and coordinates
+                    sessions through Socket.IO. mediasoup acts as the WebRTC SFU between camera phones and browser
+                    viewers. Cameras publish simulcast layers, allowing a viewer to switch quality per tile without
+                    asking the camera to restart its stream.</p>
+            </section>
+
+            <section aria-labelledby="outcome-title">
+                <p class="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-300">04 / The outcome</p>
+                <h2 id="outcome-title" class="mt-3 text-2xl font-bold">A browser dashboard without cloud dependencies
+                </h2>
+                <p class="mt-4 leading-8 text-gray-300">Phones on the same LAN can publish camera feeds that appear in a
+                    responsive viewer dashboard. The project documents a target glass-to-glass latency of about 100–300
+                    ms on a healthy LAN; actual results depend on the network and devices.</p>
+            </section>
+        </article>
+
+        <footer class="flex flex-wrap items-center justify-between gap-4 border-t border-white/10 pt-8">
+            <a href="index.html" class="text-sm font-semibold text-indigo-300 transition hover:text-white">&larr; Back
+                to all case studies</a>
+            <a href="https://github.com/ahmad-allawy/Reem-Cam" target="_blank" rel="noopener noreferrer"
+                class="text-sm font-semibold text-gray-300 transition hover:text-white">View source code</a>
+        </footer>
+    </main>
+</body>
+
+</html>

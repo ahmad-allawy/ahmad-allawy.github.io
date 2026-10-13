@@ -1,0 +1,90 @@
+<section aria-labelledby="case-studies-title" class="mx-auto max-w-6xl px-6">
+    <header class="mb-10 flex flex-col gap-5 md:mb-14 md:flex-row md:items-end md:justify-between">
+        <div>
+            <p class="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-400">Engineering journal</p>
+            <h2 id="case-studies-title" class="text-4xl font-extrabold">
+                Case <span class="bg-gradient-to-r from-indigo-400 to-pink-600 bg-clip-text text-transparent">Studies</span>
+            </h2>
+        </div>
+        <p class="max-w-xl text-base leading-7 text-gray-300">
+            Real engineering challenges, the reasoning behind each fix, and what changed as a result.
+        </p>
+    </header>
+
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <article class="case-study-card overflow-hidden rounded-lg border border-indigo-500/20 bg-gray-800/50 transition duration-300 hover:-translate-y-1 hover:border-indigo-400/40">
+            <a class="group block h-full" href="../case-studies/reem-cam.html">
+                <div class="aspect-[16/10] overflow-hidden bg-gray-800">
+                    <img class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        src="../assets/case-studies/reem-cam.png"
+                        alt="Illustrative diagram of phone cameras sending WebRTC streams through a mediasoup server to a local dashboard."
+                        loading="lazy" width="1200" height="750">
+                </div>
+                <div class="flex h-[calc(100%-16rem)] flex-col p-6">
+                    <p class="text-xs font-semibold uppercase tracking-wide text-emerald-400">WebRTC · Local networking</p>
+                    <h3 class="mt-3 text-xl font-semibold text-white">Running multi-camera streaming on a local network</h3>
+                    <p class="mt-3 flex-1 text-sm leading-6 text-gray-300">Connecting phone cameras to browser dashboards over one Wi-Fi network without cloud services.</p>
+                    <span class="mt-5 inline-block text-sm font-semibold text-indigo-300">Read case study <span aria-hidden="true">&rarr;</span></span>
+                </div>
+            </a>
+        </article>
+
+        <article class="case-study-card overflow-hidden rounded-lg border border-indigo-500/20 bg-gray-800/50 transition duration-300 hover:-translate-y-1 hover:border-indigo-400/40">
+            <a class="group block h-full" href="../case-studies/askry-low-resource.html">
+                <div class="aspect-[16/10] overflow-hidden bg-gray-800">
+                    <img class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        src="../assets/case-studies/askry.png"
+                        alt="Concept diagram of the ASKRY gym system and its Windows 7, 2 GB RAM, and Waitress deployment constraints; not an application screenshot."
+                        loading="lazy" width="1200" height="750">
+                </div>
+                <div class="flex h-[calc(100%-16rem)] flex-col p-6">
+                    <p class="text-xs font-semibold uppercase tracking-wide text-emerald-400">Python · Deployment</p>
+                    <h3 class="mt-3 text-xl font-semibold text-white">Keeping gym management usable on older hardware</h3>
+                    <p class="mt-3 flex-1 text-sm leading-6 text-gray-300">A lightweight full-stack system designed for Windows 7 computers with 2 GB of RAM.</p>
+                    <span class="mt-5 inline-block text-sm font-semibold text-indigo-300">Read case study <span aria-hidden="true">&rarr;</span></span>
+                </div>
+            </a>
+        </article>
+
+        <article class="case-study-card overflow-hidden rounded-lg border border-indigo-500/20 bg-gray-800/50 transition duration-300 hover:-translate-y-1 hover:border-indigo-400/40">
+            <a class="group block h-full" href="../case-studies/fuel-route-optimizer.html">
+                <div class="aspect-[16/10] overflow-hidden bg-gray-800">
+                    <img class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        src="../assets/case-studies/fuel-route-optimizer.png"
+                        alt="Illustrative route diagram comparing candidate fuel stops and a selected route, not a navigation map."
+                        loading="lazy" width="1200" height="750">
+                </div>
+                <div class="flex h-[calc(100%-16rem)] flex-col p-6">
+                    <p class="text-xs font-semibold uppercase tracking-wide text-emerald-400">Django · Route optimization</p>
+                    <h3 class="mt-3 text-xl font-semibold text-white">Choosing fuel stops by cost and vehicle range</h3>
+                    <p class="mt-3 flex-1 text-sm leading-6 text-gray-300">Planning fuel stops from station prices and locations while accounting for vehicle range.</p>
+                    <span class="mt-5 inline-block text-sm font-semibold text-indigo-300">Read case study <span aria-hidden="true">&rarr;</span></span>
+                </div>
+            </a>
+        </article>
+    </div>
+
+    <div class="mt-10 text-center">
+        <a href="case-studies/index.html" class="case-studies-view-all inline-flex items-center gap-2 border-b border-indigo-400/50 pb-2 text-sm font-semibold text-indigo-300 transition hover:border-pink-400 hover:text-white">
+            View all case studies <span aria-hidden="true">&rarr;</span>
+        </a>
+    </div>
+
+    <template id="case-study-card-template">
+        <article class="overflow-hidden rounded-lg border border-indigo-500/20 bg-gray-800/50 transition duration-300 hover:-translate-y-1 hover:border-indigo-400/40">
+            <a class="group block" href="../case-studies/case-name.html">
+                <div class="aspect-[16/10] overflow-hidden bg-gray-800">
+                    <img class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                        src="../assets/case-studies/case-cover.webp"
+                        alt="Concise description of the case study image" loading="lazy">
+                </div>
+                <div class="p-6">
+                    <p class="text-xs font-medium uppercase tracking-wide text-emerald-400">Category · Month Year</p>
+                    <h3 class="mt-3 text-xl font-semibold text-white">Case study title</h3>
+                    <p class="mt-2 text-sm leading-6 text-gray-300">A concise summary of the outcome.</p>
+                    <span class="mt-5 inline-block text-sm font-semibold text-indigo-300">Read case study <span aria-hidden="true">&rarr;</span></span>
+                </div>
+            </a>
+        </article>
+    </template>
+</section>
