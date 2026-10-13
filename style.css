@@ -7,6 +7,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -17,6 +18,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -28,6 +30,7 @@
     opacity: 0;
     transform: translateX(20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -39,10 +42,12 @@
     transform: scale(1);
     opacity: 0.6;
   }
+
   50% {
     transform: scale(1.05);
     opacity: 0.8;
   }
+
   100% {
     transform: scale(1);
     opacity: 0.6;
@@ -53,6 +58,7 @@
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(100%);
   }
@@ -79,14 +85,38 @@
 }
 
 /* For staggered animations */
-.animate-staggered-1 { animation-delay: 0.1s; }
-.animate-staggered-2 { animation-delay: 0.2s; }
-.animate-staggered-3 { animation-delay: 0.3s; }
-.animate-staggered-4 { animation-delay: 0.4s; }
-.animate-staggered-5 { animation-delay: 0.5s; }
-.animate-staggered-6 { animation-delay: 0.6s; }
-.animate-staggered-7 { animation-delay: 0.7s; }
-.animate-staggered-8 { animation-delay: 0.8s; }
+.animate-staggered-1 {
+  animation-delay: 0.1s;
+}
+
+.animate-staggered-2 {
+  animation-delay: 0.2s;
+}
+
+.animate-staggered-3 {
+  animation-delay: 0.3s;
+}
+
+.animate-staggered-4 {
+  animation-delay: 0.4s;
+}
+
+.animate-staggered-5 {
+  animation-delay: 0.5s;
+}
+
+.animate-staggered-6 {
+  animation-delay: 0.6s;
+}
+
+.animate-staggered-7 {
+  animation-delay: 0.7s;
+}
+
+.animate-staggered-8 {
+  animation-delay: 0.8s;
+}
+
 /* Add more as needed for your elements */
 
 #case-studies .case-study-card:nth-child(n + 4) {
