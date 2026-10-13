@@ -126,3 +126,60 @@
 .case-studies-page .case-studies-view-all {
   display: none;
 }
+
+.mobile-menu {
+  height: 100vh;
+  height: 100dvh;
+}
+
+@media (max-width: 639px) {
+  main > section:not(#hero) {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  #experience h2,
+  #skills h2,
+  #certificates h2,
+  #projects h2,
+  #case-studies h2,
+  #contact h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  #experience .grid > .project-card {
+    flex-direction: column;
+  }
+
+  #experience .grid > .project-card > div:first-child {
+    margin-bottom: 0.75rem;
+  }
+
+  #experience .grid > .project-card > div:nth-child(2) {
+    width: 100%;
+    min-width: 0;
+    padding-left: 0;
+  }
+
+  #experience .grid > .project-card > div:nth-child(2) > div:first-child {
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+
+  #experience .grid > .project-card h6 {
+    overflow-wrap: anywhere;
+  }
+
+  #projects .project-filters {
+    width: 100%;
+    column-gap: 0.5rem;
+    row-gap: 0.75rem;
+  }
+
+  #projects .filter-btn {
+    max-width: 100%;
+    padding: 0.625rem 0.875rem;
+    font-size: 0.875rem;
+  }
+}
