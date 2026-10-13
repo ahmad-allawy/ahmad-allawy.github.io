@@ -75,7 +75,7 @@
     <button
         class="filter-btn px-5 py-2 bg-indigo-500/20 border border-indigo-500/40 rounded-full hover:bg-indigo-500/30"
         data-filter="backend">
-        Backend
+        Backend (Full stack)
     </button>
 
     <button
@@ -100,6 +100,72 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
     <!-- backend projects -->
+    <div data-category="backend"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 project-cards">
+        <h3 class="text-xl font-semibold mb-4">Reem-Cam (Multi-Camera Stream)</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Full Stack</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">TypeScript</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Node.js</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">React</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">WebRTC</span>
+        </div>
+
+        <p class="text-base opacity-90 mb-4">
+            Local LAN multi-camera streaming application that turns any number of phones into live cameras watched from
+            any browser without a cloud or database.
+        </p>
+
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>Low-latency local LAN streaming via WebRTC (mediasoup SFU)</li>
+                <li>Simulcast support with instant per-tile quality switching</li>
+                <li>Responsive grid dashboard layout for multiple camera feeds</li>
+                <li>Pure Node.js, React, Vite, and Zustand architecture</li>
+            </ul>
+        </details>
+
+        <div class="flex gap-4">
+            <a href="https://github.com/ahmad-allawy/Reem-Cam" target="_blank" class="text-white hover:text-indigo-400">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
+        </div>
+    </div>
+    <div data-category="fullstack"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 project-cards">
+        <h3 class="text-xl font-semibold mb-4">ASKRY Gym Management System</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Full Stack</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Python</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">HTML/CSS</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Windows 7</span>
+        </div>
+
+        <p class="text-base opacity-90 mb-4">
+            A lightweight Full Stack gym management system designed to run efficiently on Windows 7 and low-spec
+            environments with 2 GB RAM.
+        </p>
+
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>Lightweight architecture optimized for low resource usage</li>
+                <li>Full stack setup supporting local server execution (Waitress)</li>
+                <li>Designed for easy deployment and use on older Windows machines</li>
+                <li>Member management and system configuration tools</li>
+            </ul>
+        </details>
+
+        <div class="flex gap-4">
+            <a href="https://github.com/ahmad-allawy/ASKRY-gym" target="_blank"
+                class="text-white hover:text-indigo-400">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
+        </div>
+    </div>
     <div data-category="backend"
         class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 project-cards">
         <h3 class="text-xl font-semibold mb-4">Django E-Commerce API</h3>
@@ -127,7 +193,41 @@
         </details>
 
         <div class="flex gap-4">
-            <a href="https://github.com/ahmad-allawy/Django-Ecommerce-API" target="_blank" class="text-white hover:text-indigo-400">
+            <a href="https://github.com/ahmad-allawy/Django-Ecommerce-API" target="_blank"
+                class="text-white hover:text-indigo-400">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
+        </div>
+    </div>
+    <div data-category="backend"
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 project-cards">
+        <h3 class="text-xl font-semibold mb-4">Fuel Route Optimizer (Backend)</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Backend</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Django</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Python</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">REST API</span>
+        </div>
+
+        <p class="text-base opacity-90 mb-4">
+            Django backend application that stores fuel station data, exposes a REST API, and calculates optimal routes
+            based on fuel price and distance.
+        </p>
+
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>Imports fuel station data (coordinates and prices)</li>
+                <li>REST API to query stations and optimized routes</li>
+                <li>SQLite database & Django management commands</li>
+                <li>Caching results for identical requests</li>
+            </ul>
+        </details>
+
+        <div class="flex gap-4">
+            <a href="https://github.com/ahmad-allawy/fuel-route-optimizer" target="_blank"
+                class="text-white hover:text-indigo-400">
                 <i class="fab fa-github mr-2"></i>Source code
             </a>
         </div>
@@ -164,7 +264,7 @@
         <div class="flex flex-wrap gap-2 mb-4">
             <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Node.js</span>
             <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Express</span>
-             <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Postgresql</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Postgresql</span>
             <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">JWT</span>
         </div>
 
@@ -180,48 +280,49 @@
                 <li>Role-based permissions</li>
             </ul>
         </details>
-         <div class="flex gap-4">
-            <a href="https://github.com/Ahmed-Allawy/node_js_projects" target="_blank" class="text-white hover:text-indigo-400">
+        <div class="flex gap-4">
+            <a href="https://github.com/Ahmed-Allawy/node_js_projects" target="_blank"
+                class="text-white hover:text-indigo-400">
                 <i class="fab fa-github mr-2"></i>Source code
             </a>
         </div>
     </div>
     <div data-category="backend"
-    class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-cards">
-    
-    <h3 class="text-xl font-semibold mb-4">Node.js E-Commerce API</h3>
+        class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 animate-slide-in-up project-cards">
 
-    <div class="flex flex-wrap gap-2 mb-4">
-        <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Backend</span>
-        <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Node.js</span>
-        <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Express</span>
-        <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">MongoDB</span>
-        <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">JWT</span>
+        <h3 class="text-xl font-semibold mb-4">Node.js E-Commerce API</h3>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Backend</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Node.js</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">Express</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">MongoDB</span>
+            <span class="bg-indigo-500/10 text-indigo-400 px-3 py-1 rounded-full text-sm">JWT</span>
+        </div>
+
+        <p class="text-base opacity-90 mb-4">
+            RESTful Node.js API for an E-Commerce system providing core features such as
+            user authentication, product management, cart, and order processing.
+        </p>
+
+        <details class="mb-4">
+            <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
+            <ul class="list-disc pl-5 mt-2 text-sm">
+                <li>User authentication & authorization (JWT)</li>
+                <li>Product & category management</li>
+                <li>Shopping cart functionality</li>
+                <li>Order creation and tracking</li>
+                <li>Secure RESTful API architecture</li>
+            </ul>
+        </details>
+
+        <div class="flex gap-4">
+            <a href="https://github.com/ahmad-allawy/nodejs-ecommerce-api" target="_blank"
+                class="text-white hover:text-indigo-400 transition-all duration-300">
+                <i class="fab fa-github mr-2"></i>Source code
+            </a>
+        </div>
     </div>
-
-    <p class="text-base opacity-90 mb-4">
-        RESTful Node.js API for an E-Commerce system providing core features such as
-        user authentication, product management, cart, and order processing.
-    </p>
-
-    <details class="mb-4">
-        <summary class="text-emerald-400 font-medium cursor-pointer">Key Features</summary>
-        <ul class="list-disc pl-5 mt-2 text-sm">
-            <li>User authentication & authorization (JWT)</li>
-            <li>Product & category management</li>
-            <li>Shopping cart functionality</li>
-            <li>Order creation and tracking</li>
-            <li>Secure RESTful API architecture</li>
-        </ul>
-    </details>
-
-    <div class="flex gap-4">
-        <a href="https://github.com/ahmad-allawy/nodejs-ecommerce-api" target="_blank"
-            class="text-white hover:text-indigo-400 transition-all duration-300">
-            <i class="fab fa-github mr-2"></i>Source code
-        </a>
-    </div>
-</div>
 
     <div data-category="backend"
         class="bg-gray-800/50 border border-indigo-500/20 rounded-xl p-6 hover:-translate-y-3 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-500 project-cards">
@@ -245,13 +346,14 @@
                 <li>High performance communication</li>
             </ul>
         </details>
-         <div class="flex gap-4">
-            <a href="https://github.com/ahmad-allawy/GRPC_Python" target="_blank" class="text-white hover:text-indigo-400">
+        <div class="flex gap-4">
+            <a href="https://github.com/ahmad-allawy/GRPC_Python" target="_blank"
+                class="text-white hover:text-indigo-400">
                 <i class="fab fa-github mr-2"></i>Source code
             </a>
         </div>
     </div>
-        <!-- End of backend projects -->
+    <!-- End of backend projects -->
 
 
     <!-- IoT & embedded projects -->
