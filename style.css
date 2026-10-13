@@ -133,7 +133,7 @@
 }
 
 @media (max-width: 639px) {
-  main > section:not(#hero) {
+  main>section:not(#hero) {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
   }
@@ -148,26 +148,26 @@
     line-height: 2.25rem;
   }
 
-  #experience .grid > .project-card {
+  #experience .grid>.project-card {
     flex-direction: column;
   }
 
-  #experience .grid > .project-card > div:first-child {
+  #experience .grid>.project-card>div:first-child {
     margin-bottom: 0.75rem;
   }
 
-  #experience .grid > .project-card > div:nth-child(2) {
+  #experience .grid>.project-card>div:nth-child(2) {
     width: 100%;
     min-width: 0;
     padding-left: 0;
   }
 
-  #experience .grid > .project-card > div:nth-child(2) > div:first-child {
+  #experience .grid>.project-card>div:nth-child(2)>div:first-child {
     flex-wrap: wrap;
     align-items: baseline;
   }
 
-  #experience .grid > .project-card h6 {
+  #experience .grid>.project-card h6 {
     overflow-wrap: anywhere;
   }
 
