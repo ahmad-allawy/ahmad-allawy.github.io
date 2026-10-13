@@ -1,18 +1,23 @@
-function secondsToDhms(seconds) {
-    seconds = Number(seconds/1000);
-    var d = Math.floor(seconds / (3600*24));
-    var h = Math.floor(seconds % (3600*24) / 3600);
-    var m = Math.floor(seconds % 3600 / 60);
-    var s = Math.floor(seconds % 60);
-    var dDisplay = d > 0 ? d + (d == 1 ? " day, " : " days, ") : "";
-    var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours, ") : "";
-    var mDisplay = m > 0 ? m + (m == 1 ? " minute, " : " minutes, ") : "";
-    var sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "";
-    return dDisplay + hDisplay + mDisplay + sDisplay;
-    }
+function formatArabicDuration(milliseconds) {
+    const totalSeconds = Math.floor(milliseconds / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor(totalSeconds % 86400 / 3600);
+    const minutes = Math.floor(totalSeconds % 3600 / 60);
+    const seconds = totalSeconds % 60;
+    const pluralRules = new Intl.PluralRules("ar");
+    const units = [
+        [days, { zero: "أيام", one: "يوم", two: "يومان", few: "أيام", many: "يومًا", other: "يومًا" }],
+        [hours, { zero: "ساعات", one: "ساعة", two: "ساعتان", few: "ساعات", many: "ساعة", other: "ساعة" }],
+        [minutes, { zero: "دقائق", one: "دقيقة", two: "دقيقتان", few: "دقائق", many: "دقيقة", other: "دقيقة" }],
+        [seconds, { zero: "ثوانٍ", one: "ثانية", two: "ثانيتان", few: "ثوانٍ", many: "ثانية", other: "ثانية" }]
+    ];
 
-//Define graduation date 
-let military_date  = new Date("1 April 2026 12:00:00");
+    return units
+        .map(([value, labels]) => `${value.toLocaleString("ar-EG")} ${labels[pluralRules.select(value)]}`)
+        .join("، ");
+}
+
+const military_date = new Date(2026, 3, 1);
 
 var display_military_date = document.getElementById("military_date");
 
@@ -20,34 +25,29 @@ var display_aphorism = document.getElementById("aphorism");
 
 const aphorisms = [
 
-"الطبلة يا رااعي",
-"بالعدااد إثنين",
-"حد إثنين ... إثنين",
-"انا زعلااان",
-"كلية الضباط الإحتياط .. جنبااان سلاااااا",
-"ياا معفن",
-"الدفعة 166 عندها سرعة استجابة عالية",
-"استرح وشرب ماية استرح"
+    "الطبلة يا رااعي",
+    "بالعدااد إثنين",
+    "حد إثنين ... إثنين",
+    "انا زعلااان",
+    "كلية الضباط الإحتياط .. جنبااان سلاااااا",
+    "ياا معفن",
+    "الدفعة 166 عندها سرعة استجابة عالية",
+    "استرح وشرب ماية استرح"
 ];
 
-function displayDate(){
+function displayDate() {
 
-let datenow = new Date();
-console.log(datenow);
+    const elapsed = Math.max(0, Date.now() - military_date.getTime());
+    const result = formatArabicDuration(elapsed);
 
-
-let diff = military_date - datenow;
-
-let result = secondsToDhms(diff);
-
-display_military_date.innerHTML = result;
+    display_military_date.innerHTML = result;
 
 }
 
-function displayAphorism(){
+function displayAphorism() {
 
-const randomIndex = Math.floor(Math.random()*aphorisms.length);
+    const randomIndex = Math.floor(Math.random() * aphorisms.length);
 
-display_aphorism.innerHTML = aphorisms[randomIndex];
+    display_aphorism.innerHTML = aphorisms[randomIndex];
 
 }
