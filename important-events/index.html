@@ -147,6 +147,16 @@
             display: block;
         }
 
+        .wedding-icon {
+            display: block;
+            width: 120px;
+            height: 120px;
+            max-width: 100%;
+            object-fit: contain;
+            margin: 0 auto 1rem;
+        }
+
+
         h2 {
             font-size: 1.1rem;
             font-weight: 600;
@@ -226,12 +236,12 @@
     <div class="container">
         <h1>
             <span>Journey to the</span>
-            Big Day
+            Important Dates
         </h1>
 
         <div class="counter-grid">
             <div class="counter-card flight">
-                <span class="icon">🎉</span>
+                <span class="icon">💍</span>
                 <h2>Engagement Date</h2>
                 <div class="days-container">
                     <span id="flight-days" class="days">--</span>
@@ -240,7 +250,9 @@
             </div>
 
             <div class="counter-card marriage">
-                <span class="icon">💍</span>
+
+                <img class="wedding-icon" src="wedding-icon.png" alt="Wedding Icon">
+
                 <h2>The Wedding</h2>
                 <div class="days-container">
                     <span id="marriage-days" class="days">--</span>
