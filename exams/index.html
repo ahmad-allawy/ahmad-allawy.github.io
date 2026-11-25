@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="اختبارات تفاعلية في الفقه">
+  <title>اختبارات الفقه | تعلّم واختبر نفسك</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <header class="topbar"><a class="brand" href="#" aria-label="الرئيسية"><span class="brand-mark">ف</span><span>زاد
+          الفقه</span></a><span class="top-note">تعلّم • اختبر • تقدّم</span></header>
+    <section id="welcomeScreen" class="welcome-screen">
+      <div class="hero-copy">
+        <span class="eyebrow"><i></i> رحلة علمية تفاعلية</span>
+        <h1>كل سؤال يقربك<br><span>من فهمٍ أعمق.</span></h1>
+        <p>اختبر فهمك لدروس الفقه، وتابع نتيجتك خطوة بخطوة — بدون وقت محدد وبالسرعة التي تناسبك.</p>
+        <form id="nameForm" class="name-form">
+          <label for="studentName">اكتب اسمك للبدء</label>
+          <div class="name-input-wrap"><span>✦</span><input id="studentName" maxlength="40" autocomplete="name"
+              placeholder="اسم الممتحن" required><button type="submit">ابدأ الرحلة <b>←</b></button></div>
+          <small>اسمك سيظهر في نتيجة الاختبار فقط.</small>
+        </form>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+        <div class="book">
+          <div class="book-page"></div>
+          <div class="book-cover"><span>اقرأ</span><small>وارتقِ بالعلم</small></div>
+        </div>
+        <div class="spark spark-a">✦</div>
+        <div class="spark spark-b">✧</div>
+        <div class="floating-pill">٤ دروس <span>•</span> ٤٠ سؤالًا</div>
+      </div>
+    </section>
+    <section id="dashboardScreen" class="dashboard-screen hidden">
+      <div class="welcome-row">
+        <div><span class="eyebrow">مرحباً بعودتك</span>
+          <h2>أهلاً بك، <span id="displayName"></span> 👋</h2>
+          <p>اختر درساً بعينه أو أنشئ اختباراً عشوائياً من بنك الأسئلة.</p>
+        </div>
+        <div class="student-avatar" id="avatarInitial">م</div>
+      </div>
+      <div class="section-heading">
+        <div><span class="eyebrow">مسارك التعليمي</span>
+          <h3>اختر الدرس</h3>
+        </div><span class="count-chip" id="lessonCount">٤ دروس</span>
+      </div>
+      <div id="lessonGrid" class="lesson-grid"></div>
+      <section class="random-panel">
+        <div class="random-icon">✧</div>
+        <div class="random-copy"><span class="eyebrow">تحدٍّ منوّع</span>
+          <h3>اختبار عشوائي من كل الدروس</h3>
+          <p>سنختار لك أسئلة متنوعة دون تكرار من جميع الدروس المتاحة.</p>
+        </div>
+        <form id="randomForm" class="random-controls"><label for="randomCount">عدد الأسئلة</label>
+          <div class="random-input-row"><input id="randomCount" type="number" min="1" max="40" value="10"><button
+              type="submit">ابدأ الاختبار <b>←</b></button></div><small id="randomHint">متاح حتى ٤٠ سؤالاً</small>
+        </form>
+      </section>
+      <button id="changeName" class="text-button">تغيير اسم الممتحن</button>
+    </section>
+    <section id="quizScreen" class="quiz-screen hidden">
+      <div class="quiz-top"><button id="exitQuiz" class="back-button">→ <span>العودة للدروس</span></button><span
+          id="quizMode" class="mode-chip">اختبار الدرس</span></div>
+      <div class="quiz-heading">
+        <div><span class="eyebrow">ركّز، فكّر، ثم اختر</span>
+          <h2 id="quizTitle">عنوان الاختبار</h2>
+        </div>
+        <div class="progress-number"><strong id="progressText">١ / ١٠</strong><span>التقدم</span></div>
+      </div>
+      <div class="progress-track">
+        <div id="progressBar"></div>
+      </div>
+      <article class="question-card">
+        <div class="question-meta"><span id="questionType">اختيار من متعدد</span><span id="questionIndex">السؤال
+            ١</span></div>
+        <h3 id="questionPrompt"></h3>
+        <div id="optionsList" class="options-list"></div>
+        <div id="feedback" class="feedback hidden" aria-live="polite"></div>
+        <div class="question-actions"><span id="answerStatus">اختر إجابتك للمتابعة</span><button id="nextQuestion"
+            disabled>السؤال التالي <b>←</b></button></div>
+      </article>
+      <p class="no-timer">♧ لا يوجد وقت محدد — خذ وقتك في التفكير</p>
+    </section>
+
+    <section id="resultScreen" class="result-screen hidden">
+      <div class="result-confetti" id="confetti" aria-hidden="true"></div>
+
+      <div class="result-card" id="resultCard">
+
+        <div class="trophy" id="resultIcon">🏆</div>
+
+        <span class="eyebrow" id="resultEyebrow">
+          أحسنت! وصلت إلى النهاية
+        </span>
+
+        <h2 id="resultGreeting">مبارك يا بطل!</h2>
+
+        <p id="resultMessage">
+          أنهيت الاختبار بنجاح.
+        </p>
+
+        <div class="score-ring" id="scoreRing">
+          <div>
+            <strong id="scorePercent">0٪</strong>
+            <span>درجتك</span>
+          </div>
+        </div>
+
+        <div class="result-stats">
+          <div>
+            <strong id="correctCount">0</strong>
+            <span>إجابات صحيحة</span>
+          </div>
+
+          <div>
+            <strong id="wrongCount">0</strong>
+            <span>إجابات خاطئة</span>
+          </div>
+
+          <div>
+            <strong id="totalCount">0</strong>
+            <span>إجمالي الأسئلة</span>
+          </div>
+        </div>
+
+        <div class="result-actions">
+
+          <button id="reviewBtn" class="secondary-button">
+            مراجعة الإجابات
+          </button>
+
+          <button id="retryBtn" class="retry-button hidden">
+            إعادة الاختبار ↻
+          </button>
+
+          <button id="homeBtn">
+            العودة للدروس ←
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="reviewScreen" class="review-screen hidden">
+      <div class="review-header"><button id="backToResult" class="back-button">→ <span>النتيجة</span></button>
+        <h2>مراجعة الإجابات</h2>
+      </div>
+      <div id="reviewList"></div>
+    </section>
+    <footer><span>زاد الفقه</span><span>نسأل الله علماً نافعاً وعملاً صالحاً</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+
+</html>
